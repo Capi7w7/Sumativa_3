@@ -17,9 +17,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
+from concesionario import views as concesionario_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', concesionario_views.landing, name='landing'),
     path('concesionario/', include('concesionario.urls')),
     path('autenticacion/', include('autenticacion.urls')),
     path('repuestos/', include('repuestos.urls')),

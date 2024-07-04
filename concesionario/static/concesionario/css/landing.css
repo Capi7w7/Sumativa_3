@@ -10,6 +10,8 @@ body {
 
 /* Stilos para la barra de busquedad (Navbar)*/
 
+
+
 a {
     color: rgb(17, 4, 4);
     text-decoration: none;
@@ -105,6 +107,12 @@ a {
   outline-offset: 2px;
 }
 
+.card-img-top img {
+  border-radius: 4%;
+  margin-top: 1rem;
+  max-height: 700px;
+  min-height: 200px;
+}
 
 /*Estilos catalogo*/
 
@@ -120,7 +128,7 @@ a {
   height: auto;
   width: auto;
   max-width: 100%;
-  display:block;
+  display:flex;
   align-items: center;
 }
 
@@ -131,4 +139,16 @@ a {
   padding: 2px;
   background: none;
 }
+
+.button {
+  margin: 2%;
+  display: flex;
+  padding: 10px 20px;
+  background-color: #111111; /* Button background color */
+  color: white; /* Button text color */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
 

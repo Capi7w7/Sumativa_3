@@ -1,16 +1,18 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Carrito de Compras</title>
-</head>
-<body>
-    <h1>Carrito de Compras</h1>
+{%extends "concesionario/landing.html" %}
+
+{%block title%} Lista de Vehiculos {%endblock%}
+
+<{% block content %}
+
+    <div class="titulo-catalago container" >
+        <h1>Carrito de Compras</h1>
+   </div> 
+    
     <ul>
         {% for item in carrito.repuestos.all %}
             <li>{{ item.repuesto.nombre }} - {{ item.cantidad }}</li>
         {% endfor %}
     </ul>
-    <a href="{% url 'catalogo_repuestos' %}">Seguir Comprando</a>
-</body>
-</html>
+    <a href="{% url 'catalogo_repuestos' %}" class="button">Seguir Comprando</a>
+
+{%endblock%}
