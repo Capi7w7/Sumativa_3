@@ -1,0 +1,24 @@
+{%extends "concesionario/landing.html" %}
+
+{%block title%} Catálogo de Repuestos {%endblock%}
+
+<{% block content %}
+
+<body>
+    <h1>Repuestos</h1>
+    <ul>
+        {% for repuesto in repuestos %}
+            <li>
+                <img src="/media/{{ repuesto.imagen }}" alt="{{ repuesto.nombre }}">
+                {{ repuesto.nombre }} - {{ repuesto.precio }}
+                <a href="{% url 'agregar_al_carrito' repuesto.id %}">Agregar al Carrito</a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% if user.is_authenticated %}
+        <a href="{% url 'ver_carrito' %}">Carrito</a>
+        <a href="{% url 'logout' %}">Cerrar Sesión</a>
+    {% endif %}
+</body>
+
+{%endblock%}

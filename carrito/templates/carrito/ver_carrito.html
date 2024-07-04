@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito de Compras</title>
+</head>
+<body>
+    <h1>Carrito de Compras</h1>
+    <ul>
+        {% for item in carrito.repuestos.all %}
+            <li>{{ item.repuesto.nombre }} - {{ item.cantidad }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'catalogo_repuestos' %}">Seguir Comprando</a>
+</body>
+</html>

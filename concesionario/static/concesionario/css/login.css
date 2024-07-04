@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+h1{
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-top: 2px;
+    text-align: center;
+    max-width: 500px;
+    text-wrap: balance;
+}
+
+
+
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+body {
+    background-image: url("../img/bakground-login.jpg");
+    backdrop-filter: blur(15px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+    g {
+      mix-blend-mode: lighten;
+    }
+    polygon {
+      stroke: none;
+      fill: rgb(252, 247, 247);
+    }
+}
+.container{
+    margin: 2%;
+    padding: 0;
+    background-color: #0f0808;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgb(0, 0,0,0.35);
+    overflow: hidden;
+    width: 90%;
+    max-width: 800px;
+    height: auto;
+}
+
+
+.container button {
+    background-color: rgb(23, 37, 49);
+    color: #fff;
+    font-size: 12px;
+    padding: 5px 45px;
+    object-fit: contain;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-bottom: 2%;
+}
+
+.container button.hidden {
+    background-color: transparent;
+    border-color: #fff;
+}
+
+
+.container form{
+    background-color: rgb(209, 225, 238);
+    background: linear-gradient(to right, #f7f3f3,rgb(157, 207, 248));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    width: 100%;
+    padding: 0px 1px;
+    height: auto;
+}
+
+
+
+
+.container input {
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+
+

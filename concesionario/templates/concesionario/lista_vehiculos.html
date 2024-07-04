@@ -1,0 +1,78 @@
+{%extends "concesionario/landing.html" %}
+
+{%block title%} Lista de Vehiculos {%endblock%}
+
+<{% block content %}
+    
+    <div class="titulo-catalago container" >
+        <h1>Lista de Vehículos</h1>
+    </div>    
+    <h2>Autos</h2>
+    <ul>
+        {% for auto in autos %}
+        <div class=" container card mt-4 mb-4">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-m-6 bg-light-rounded">
+                        <img src="{{ auto.imagen.url }}" 
+                             alt="{{ auto.nombre }}"
+                             class="card-img-top 
+                               text-center 
+                               justify-content-center 
+                               align-items-center
+                               mt-4
+                               ml-2"
+                        style="width:30rem;"/>
+                        {{ auto.nombre }} - {{ auto.precio }}
+                        <a href="{% url 'solicitar_cotizacion' 'auto' auto.id %}"><h2 class="mt-2 text-center">Cotizar</h2></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </ul>
+    <h2>Motos</h2>
+    <ul>
+        {% for moto in motos %}
+        <div class=" container card mt-4 mb-4">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-m-6 bg-light-rounded">
+                        <img src="{{ moto.imagen.url }}" 
+                             alt="{{ moto.nombre }}"
+                             class="card-img-top 
+                               text-center 
+                               justify-content-center 
+                               align-items-center
+                               mt-4
+                               ml-2"
+                        style="width:30rem;"/>
+                        {{ moto.nombre }} - {{ moto.precio }}
+                        <a href="{% url 'solicitar_cotizacion' 'moto' moto.id %}"><h2 class="mt-2 text-center">Cotizar</h2></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </ul>
+    <h2>Camionetas</h2>
+    <ul>
+        {% for camioneta in camionetas %}
+        <div class=" container card mt-4 mb-4">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-m-6 bg-light-rounded">
+                        <img src="{{ camioneta.imagen.url }}" 
+                             alt="{{ camioneta.nombre }}"
+                             class="card-img-top 
+                               text-center 
+                               justify-content-center 
+                               align-items-center
+                               mt-4
+                               ml-2"
+                        style="width:30rem;"/>
+                        {{ camioneta.nombre }} - {{ camioneta.precio }}
+                        <a href="{% url 'solicitar_cotizacion' 'camioneta' camioneta.id %}"><h2 class="mt-2 text-center">Cotizar</h2></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </ul>
+
+{%endblock%}
+

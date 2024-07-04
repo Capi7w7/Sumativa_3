@@ -1,0 +1,90 @@
+{%load static%}
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+    <title>{% block title %} Autos del Mar {% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'concesionario/vendor/bootstrap/css/bootstrapp.min.css' %}">
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    
+    <link rel="stylesheet" href="{% static 'concesionario/css/landing.css' %}">
+
+</head>
+<body>
+
+    <header>
+        <div class="topnav">
+            <div class="container-fluid">
+              <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="{% url 'landing' %}"><i class="fas fa-car icon"></i>&nbspAutos&nbspdel&nbspMar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                  aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="{% url 'lista_vehiculos' %}">Comprar&nbspauto <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'catalogo_repuestos' %}">Catálogo de Repuestos <span class="sr-only">(current)</span></a>
+                      </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'ver_carrito' %}">Carrito</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a>
+                      </li>
+                    {% else %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'register' %}">Registrate</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'login' %}">Inicia sesion</a>
+                    </li>
+                    {% endif %}
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>      
+    </header>
+
+    {% block content %}
+
+    
+
+    {% endblock %}
+
+    <footer class="oscuro">
+        <div class="container">
+          <div class="icons">
+            <div>
+              <a id="foot" href="https://www.facebook.com/"><i class="fab fa-facebook fa-5x"></i></a>
+            </div>
+            <div>
+              <a id="foot" href="https://www.twitter.com/"><i class="fab fa-twitter-square fa-5x"></i></a>
+            </div>
+            <div>
+              <a id="foot" href="https://www.instagram.com/"><i class="fab fa-instagram fa-5x"></i></a>
+            </div>
+          </div>
+          <div class="text">
+            <p>Autos del mar 2024. Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </footer>
+    
+
+    <script src="{% static 'concesionario/vendor/jquery/jquery.min.js' %}"></script>
+
+    <script src="{% static 'concesionario/vendor/bootstrap/js/bootstrap.bundle.js' %}" ></script>
+</body>
+</html>
